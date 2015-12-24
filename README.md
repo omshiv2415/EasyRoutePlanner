@@ -1,4 +1,4 @@
-=========================
+
 Easy Route Planner Android Application
 =========================
 ------------
