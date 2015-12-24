@@ -16,3 +16,11 @@ Developer has used Google Direction Android Sample to develop Easy Route Planner
 ![Alt text](EasyRoutePlanner/screenshots/device-2015-12-06-210949.png?raw=true "Title")
 
 ![alt tag](https://raw.github.com/omshiv2415/EasyRoutePlaneer/master/screenshots/device-2015-12-06-210949.png?raw=true "Title")
+
+
+
+
+![EASY ROUTE PLANNER][1]
+
+
+[1]:https://play.google.com/store/apps/details?id=com.msc.fitnesstracker
