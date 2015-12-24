@@ -3,7 +3,7 @@
 
 ------------
 
-<h2 align="center">This application core functionality is Street View [You can check it out on the Google Play store.](https://play.google.com/store/apps/details?id=com.msc.fitnesstracker)</h2>
+<h1 align="center">This application core functionality is Street View </h2>[You can check it out on the Google Play store.](https://play.google.com/store/apps/details?id=com.msc.fitnesstracker)
 
 ------------
 
@@ -28,8 +28,8 @@
 
 ------------
 
-<h2 align="center">Developer has used place API library of Google Direction Android Sample to develop Easy Route Planner [please check this example](https://github.com/jd-alexander/Google-Directions-Android)</h2>
+Developer has used place API library of Google Direction Android Sample to develop Easy Route Planner [please check this example](https://github.com/jd-alexander/Google-Directions-Android)
 
-<h2 align="center">This application is a Msc Software Engineering project.</h2>
+This application is a Msc Software Engineering project.
 
 ------------
