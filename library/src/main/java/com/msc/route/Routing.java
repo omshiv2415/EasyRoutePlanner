@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Async Task to access the Google Direction API and return the routing data.
- * Created by Furkan Tektas on 10/14/14.
- */
+
 public class Routing extends AbstractRouting {
 
     private final TravelMode travelMode;

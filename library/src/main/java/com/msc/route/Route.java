@@ -1,5 +1,5 @@
 package com.msc.route;
-//by Haseem Saheed
+
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;

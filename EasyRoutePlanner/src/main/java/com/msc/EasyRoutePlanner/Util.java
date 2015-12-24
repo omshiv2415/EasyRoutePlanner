@@ -4,11 +4,11 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-/**
- * Created by Joel on 30/06/2015.
- */
+
 public class Util {
     static public class Operations {
+
+
 
         /**
          * Checks to see if the device is online before carrying out any operations.

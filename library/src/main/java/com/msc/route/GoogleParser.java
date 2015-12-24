@@ -148,12 +148,7 @@ public class GoogleParser extends XMLParser implements Parser {
         return sBuf.toString();
     }
 
-    /**
-     * Decode a polyline string into a list of GeoPoints.
-     *
-     * @param poly polyline encoded string to decode.
-     * @return the list of GeoPoints represented by this polystring.
-     */
+
 
     private List<LatLng> decodePolyLine(final String poly) {
         int len = poly.length();

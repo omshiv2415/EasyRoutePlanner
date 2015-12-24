@@ -1,13 +1,6 @@
 package com.msc.route;
 
-/**
- * Async Task to access the Google Direction API and return the routing data
- * which is then parsed and converting to a route overlay using some classes created by Hesham Saeed.
- * @author Joel Dean
- * @author Furkan Tektas
- * Requires an instance of the map activity and the application's current context for the progress dialog.
- *
- */
+
 
 import android.os.AsyncTask;
 
@@ -20,7 +13,7 @@ import java.util.ArrayList;
 public abstract class AbstractRouting extends AsyncTask<Void, Void, ArrayList<Route>> {
     protected ArrayList<RoutingListener> _aListeners;
 
-    protected static final String DIRECTIONS_API_URL = "http://maps.googleapis.com/maps/api/directions/json?";
+    protected static final String DIRECTIONS_API_URL = "https://maps.googleapis.com/maps/api/directions/json?";
 
     public enum TravelMode {
         BIKING("biking"),
