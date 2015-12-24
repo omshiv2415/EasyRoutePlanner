@@ -30,6 +30,8 @@ This application core functionality is Street View [You can check it out on the 
 
 ------------
 
-Developer has used Google Direction Android Sample to develop Easy Route Planner [please check this example](https://github.com/jd-alexander/Google-Directions-Android)
+Developer has used place API library of Google Direction Android Sample to develop Easy Route Planner [please check this example](https://github.com/jd-alexander/Google-Directions-Android)
+
+This application is a Msc Software Engineering project.
 
 ------------
