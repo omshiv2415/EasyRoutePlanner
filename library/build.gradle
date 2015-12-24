@@ -24,48 +24,9 @@ android {
 
 
 
-def siteUrl = 'https://github.com/jd-alexander/Google-Directions-Android'      // Homepage URL of the library
-def gitUrl = 'https://github.com/jd-alexander/Google-Directions-Android.git'   // Git repository URL
-group = "com.github.jd-alexander"                      // Maven Group ID for the artifact
 
 
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
 
-                // Add your description here
-                name 'Google Directions Android'
-                description = 'This project allows you to calculate the route between two locations and displays it on a map.'
-
-                url siteUrl
-
-                // Set your license
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id 'com.github.jd-alexander '
-                        name 'Joel Dean'
-                        email 'jdeanjj1000@gmail.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-
-                }
-            }
-        }
-    }
-}
 
 
 /*
