@@ -24,11 +24,6 @@ android {
 
 
 
-
-
-
-
-
 /*
 Only necessary to push to bintray. Causes Travis CI builds to fail.
 
