@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_settings" type="id">hello</item>
+    <item name="box_steps" type="id">steps</item>
+    <item name="step_value" type="id">stepvalue</item>
+    <item name="step_units" type="id">stepunit</item>
+    <item name="row_1" type="id">row</item>
+    <item name="box_distance" type="id">box</item>
+    <item name="distance_value" type="id">dis</item>
+    <item name="row_2" type="id">rowthree</item>
+    <item name="distance_units" type="id">dis</item>
+    <item name="box_pace" type="id">boxpeace</item>
+    <item name="StepsCount" type="id">peacevalue</item>
+    <item name="pace_units" type="id">peaceunit</item>
+    <item name="box_speed" type="id">speed</item>
+    <item name="distance" type="id">speedvalue</item>
+    <item name="speed_units" type="id">speedunit</item>
+    <item name="box_calories" type="id">calorie</item>
+    <item name="calories_value" type="id">idcalories</item>
+    <item name="calories_units" type="id">calorieunit</item>
+    <item name="desired_pace_control" type="id">desiredpace</item>
+    <item name="desired_pace_label" type="id">desiredpacelable1</item>
+    <item name="desired_pace_value" type="id">desiredvaluepace2</item>
+    <item name="button_desired_pace_lower" type="id">buttondpl</item>
+    <item name="button_desired_pace_raise" type="id">buttondpr</item>
+    <item name="chrommeter" type="id">chrom</item>
+</resources>

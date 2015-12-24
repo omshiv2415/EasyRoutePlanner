@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/routeselection"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="228dp" />
+
+
+    <fragment
+        android:id="@+id/map_Route"
+        android:name="com.google.android.gms.maps.StreetViewPanoramaFragment"
+        android:layout_width="match_parent"
+        android:layout_height="379dp"
+
+        android:layout_above="@+id/rg_views"
+        android:layout_alignStart="@+id/map"
+        android:layout_below="@id/row_2"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="450dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:elevation="100dp"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:id="@+id/routeselection1"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_action_bg"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/send"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/start"
+                    android:layout_width="302dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/transparent"
+                    android:focusable="true"
+                    android:hint="Route Starting Point........"
+                    android:textColor="@android:color/background_light"
+                    android:textColorHint="@android:color/background_light" />
+
+                <View
+                    android:layout_width="305dp"
+                    android:layout_height="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/dotted" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/destination"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:focusable="true"
+                    android:hint="Route Ending Point..........."
+                    android:textColor="@android:color/background_light"
+                    android:textColorHint="@android:color/background_light" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_send_grey600_48dp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <RadioGroup
+        android:id="@+id/rg_views_routeselection"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="left|bottom"
+        android:background="@drawable/card_action_bg"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:paddingLeft="7dp">
+
+        <RadioButton
+            android:id="@+id/rb_normal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/card_action_bg"
+            android:checked="true"
+            android:text="@string/str_rb_normal"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/abc_action_bar_title_text_size" />
+
+        <RadioButton
+            android:id="@+id/rb_satellite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/card_action_bg"
+            android:text="Satellite"
+            android:textSize="@dimen/abc_action_bar_title_text_size" />
+
+        <RadioButton
+            android:id="@+id/rb_terrain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/card_action_bg"
+            android:text="@string/str_rb_terrain"
+            android:textColor="@android:color/background_dark"
+            android:textSize="@dimen/abc_action_bar_title_text_size" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/routeselectionhide"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="223dp"
+        android:background="#59ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/row_spacing"
+        android:paddingTop="@dimen/row_spacing">
+
+        <LinearLayout
+            android:id="@id/box_pace"
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/margin">
+
+            <TextView
+                android:id="@+id/StepsCount"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#BF00ccf6"
+                android:gravity="center_horizontal"
+                android:hint="@string/hint"
+                android:paddingLeft="@dimen/padding"
+                android:paddingRight="@dimen/padding"
+                android:paddingTop="@dimen/padding"
+                android:text=""
+                android:textColor="@android:color/background_dark"
+                android:textColorHint="@android:color/background_dark"
+                android:textSize="@dimen/value" />
+
+            <TextView
+                android:id="@id/pace_units"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#BF81be00"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/padding"
+                android:text="Steps"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/units" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/box_speed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/margin">
+
+            <TextView
+                android:id="@id/distance"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#BF00ccf6"
+                android:gravity="center_horizontal"
+                android:hint="@string/hint"
+                android:paddingLeft="@dimen/padding"
+                android:paddingRight="@dimen/padding"
+                android:paddingTop="@dimen/padding"
+                android:text=""
+                android:textColor="@android:color/background_dark"
+                android:textColorHint="@android:color/background_dark"
+                android:textSize="@dimen/value" />
+
+            <TextView
+                android:id="@id/speed_units"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#BF81be00"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/padding"
+                android:text="Mile"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/units" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/box_calories"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@id/calories_value"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#BF00ccf6"
+                android:gravity="center_horizontal"
+                android:hint="@string/hint"
+                android:paddingLeft="@dimen/padding"
+                android:paddingRight="@dimen/padding"
+                android:paddingTop="@dimen/padding"
+                android:text=""
+                android:textColor="@android:color/background_dark"
+                android:textColorHint="@android:color/background_dark"
+                android:textSize="@dimen/value" />
+
+            <TextView
+                android:id="@id/calories_units"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#BF81be00"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/padding"
+                android:text="@string/calories_burned"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/units" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
+

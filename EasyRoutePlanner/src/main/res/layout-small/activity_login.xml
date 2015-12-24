@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fitnesstracker"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.msc.EasyRoutePlanner.Login">
+
+    <EditText
+        android:id="@+id/UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp"
+        android:hint="User Name" />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/UserName"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/UserName"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:background="@drawable/card_action_bg"
+        android:hint="Login"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@android:color/background_dark"
+
+        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material" />
+
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btnLogin"
+        android:layout_marginBottom="49dp"
+        android:background="@drawable/card_action_bg"
+        android:hint="Register"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@android:color/background_dark"
+        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material" />
+
+    <Button
+        android:id="@+id/btnResetpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:background="@android:color/transparent"
+        android:capitalize="none"
+        android:hint="Forgot your password ?"
+        android:padding="@dimen/abc_action_bar_default_padding_material"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@android:color/background_dark"
+        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/btnResetpassword"
+        android:text="Fitness Tracker"
+        android:textSize="@dimen/RfSize"
+        android:textStyle="bold" />
+
+</RelativeLayout>

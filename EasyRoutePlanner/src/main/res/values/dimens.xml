@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="large_half">240.0px</dimen>
+    <dimen name="value">30.0sp</dimen>
+    <dimen name="small_value">21.0sp</dimen>
+    <dimen name="step_count">30.0sp</dimen>
+    <dimen name="units">11.0sp</dimen>
+    <dimen name="desired_pace">36.0sp</dimen>
+    <dimen name="desired_pace_width">128.0sp</dimen>
+    <dimen name="button">48.0sp</dimen>
+    <dimen name="button_sign">24.0sp</dimen>
+    <dimen name="margin">10.0px</dimen>
+    <dimen name="padding">5.0px</dimen>
+    <dimen name="row_spacing">10.0px</dimen>
+    <dimen name="abc_action_bar_title_text_size">14dp</dimen>
+    <dimen name="abc_action_bar_subtitle_text_size">18dp</dimen>
+    <dimen name="RfSize">24dp</dimen>
+    <dimen name="RFSize">24dp</dimen>ids.xml
+    <dimen name="divider">2dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="card_content_text">14sp</dimen>
+    <dimen name="card_content_title">24sp</dimen>
+
+    <dimen name="card_padding">15dp</dimen>
+    <dimen name="card_margin">10dp</dimen>
+
+    <dimen name="card_action_margin">3dp</dimen>
+    <dimen name="card_action_padding">8dp</dimen>
+
+    <dimen name="card_stream_bottom_padding">90dp</dimen>
+    <dimen name="top_pad">72dp</dimen>
+    <dimen name="top_padet">99dp</dimen>
+    <dimen name="pad_left">28dp</dimen>
+    <dimen name="fourteen">14dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>
