@@ -28,8 +28,9 @@
 
 ------------
 
+<h1 align="center">This application is a Msc Software Engineering project.</h1>
+
 Developer has used place API library of Google Direction Android Sample to develop Easy Route Planner [please check this example](https://github.com/jd-alexander/Google-Directions-Android)
 
-This application is a Msc Software Engineering project.
 
 ------------
