@@ -3,7 +3,7 @@
 
 ------------
 
-<p align="center">This application core functionality is Street View [You can check it out on the Google Play store.](https://play.google.com/store/apps/details?id=com.msc.fitnesstracker)
+<p align="center">This application core functionality is Street View [You can check it out on the Google Play Store.](https://play.google.com/store/apps/details?id=com.msc.fitnesstracker)
 
 ------------
 
