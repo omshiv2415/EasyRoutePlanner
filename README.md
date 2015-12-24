@@ -6,8 +6,6 @@ This project allows you to calculate the direction between two locations and dis
 
 
 
-![device-2015-12-06-210949][1]
-
 
 ------------
 
