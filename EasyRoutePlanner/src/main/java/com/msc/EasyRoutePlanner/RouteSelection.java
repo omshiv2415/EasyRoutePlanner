@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -117,6 +118,7 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
     private TextView RouteThreeTime;
     private TextView mRouteMode;
     private RelativeLayout mRouteInfo;
+    private CardView mCardview;
 
     /**
      * This activity loads a googleMap and then displays the route and pushpins on it.
@@ -137,7 +139,7 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
         mStepDetectorSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
         rgViews = (RadioGroup) findViewById(R.id.rg_views_routeselection);
         speedMeter = (TextView) findViewById(R.id.spedo_meter);
-
+        mCardview = (CardView)findViewById(R.id.cardview1);
         // calling view and relativelavyout for hide and visible
         speech = new TextToSpeech(this, this);
         routehide = (RelativeLayout) findViewById(R.id.routeselection1);
@@ -181,7 +183,8 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
             speedDisplay.setVisibility(View.VISIBLE);
         }
 
-        mRouteInfo.setVisibility(View.GONE);
+
+        mCardview.setVisibility(View.GONE);
 
         stepshide.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,8 +192,8 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
 
                 routehide.setVisibility(View.VISIBLE);
                 rgViews.setVisibility(View.VISIBLE);
-                //googleMap.setMyLocationEnabled(false);
                 mRouteInfo.setVisibility(View.VISIBLE);
+                mCardview.setVisibility(View.VISIBLE);
                 googleMap.getUiSettings().setZoomControlsEnabled(false);
                 starting.setHint("Route Starting Point");
             }
@@ -203,8 +206,8 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
                 routehide.setVisibility(View.GONE);
                 rgViews.setVisibility(View.GONE);
                 mRouteInfo.setVisibility(View.GONE);
-                //googleMap.setMyLocationEnabled(true);
                 mRouteInfo.setVisibility(View.GONE);
+                mCardview.setVisibility(View.GONE);
                 googleMap.getUiSettings().setZoomControlsEnabled(true);
 
             }
@@ -213,7 +216,8 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
         mRouteInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRouteInfo.setVisibility(View.GONE);
+
+                mCardview.setVisibility(View.GONE);
             }
         });
         rgViews.setOnClickListener(new View.OnClickListener() {
