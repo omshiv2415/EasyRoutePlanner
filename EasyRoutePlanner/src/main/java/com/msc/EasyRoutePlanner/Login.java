@@ -24,7 +24,7 @@ public class Login extends ActionBarActivity {
     protected Button mLoginBtn;
     protected Button mRegisterBtn;
     protected Button mRestPassword;
-    private ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +100,7 @@ public class Login extends ActionBarActivity {
 
                 Intent takeUserResetPassword = new Intent(Login.this, resetPassword.class);
                 startActivity(takeUserResetPassword);
-                //Login.this.finish();
+
 
             }
         });
@@ -114,7 +114,7 @@ public class Login extends ActionBarActivity {
 
                 Intent takeUserRegister = new Intent(Login.this, Register.class);
                 startActivity(takeUserRegister);
-                //Login.this.finish()
+
             }
         });
 

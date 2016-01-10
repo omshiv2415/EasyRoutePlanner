@@ -11,7 +11,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        // Initialising parse client id and key
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, getString(R.string.ApplicationID), getString(R.string.Client_ID));
         // This allows read access to all objects

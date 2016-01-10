@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 
 public class Register extends ActionBarActivity {
 
-
+    //Declaration of Components such as EditText,Buttons.....
     protected EditText CreateUserName;
     protected EditText Email;
     protected EditText Password;
@@ -31,14 +31,16 @@ public class Register extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        // Initialising Component to the Declared Variables above
         CreateUserName = (EditText) findViewById(R.id.editTextUserName);
         Email = (EditText) findViewById(R.id.editTextEmail);
         Password = (EditText) findViewById(R.id.editTextPassword);
         retypePassword = (EditText) findViewById(R.id.editTextRetypePassword);
         RegisterButton = (Button) findViewById(R.id.buttonRegister);
 
-
+        //setting up register button to click when user click this button it
+        // will take all the information from the editText and send it to the
+        // parse cloud database.
         RegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,7 +125,7 @@ public class Register extends ActionBarActivity {
 
                 } else {
 
-
+                   // storing user registration data to parse cloud database
                     user.setPassword(mPassword);
                     user.setUsername(mUserName);
                     user.setEmail(mEmail);
@@ -134,15 +136,14 @@ public class Register extends ActionBarActivity {
                         public void done(ParseException e) {
                             if (e == null) {
                                 // user signed up successfully
-
                                 Toast.makeText(Register.this, "Success ! Welcome", Toast.LENGTH_LONG).show();
                                 // take user homepage
-                                Intent takeUserHome = new Intent(Register.this, MainActivity.class);
+                                Intent takeUserHome = new Intent(Register.this, Login.class);
                                 startActivity(takeUserHome);
 
                             } else {
                                 //there was an error signing up user.
-
+                                Toast.makeText(Register.this, "Please try again", Toast.LENGTH_LONG).show();
                             }
                         }
                     });

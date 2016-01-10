@@ -12,7 +12,7 @@ import com.parse.ParseUser;
 import com.parse.RequestPasswordResetCallback;
 
 public class resetPassword extends Activity {
-
+    //Declaration of Components such as EditText,Buttons.....
     private EditText EmailAddress;
     private Button Reset;
 
@@ -22,9 +22,13 @@ public class resetPassword extends Activity {
         setContentView(R.layout.activity_reset_password);
 
 
+        // Initialising Component to the Declared Variables above
         EmailAddress = (EditText) findViewById(R.id.editTextResetPassword);
         Reset = (Button) findViewById(R.id.btnResetPassword);
-
+        // Setting up rest button when user press this button ParseUser object will find the
+        // register user in background and if the object find the register email address it will
+        // send the reset information to the user's email address and if not then it will send
+        // notification through Toast message "please provide correct Email"
         Reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

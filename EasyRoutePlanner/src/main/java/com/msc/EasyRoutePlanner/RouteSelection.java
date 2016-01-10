@@ -2,10 +2,12 @@ package com.msc.EasyRoutePlanner;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -18,6 +20,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.Editable;
@@ -25,8 +30,10 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -57,6 +64,8 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
+import com.google.android.gms.maps.model.StreetViewPanoramaLocation;
 import com.msc.route.AbstractRouting;
 import com.msc.route.Route;
 import com.msc.route.Routing;
@@ -76,7 +85,11 @@ import static android.R.style.Theme_Dialog;
 
 public class RouteSelection extends AppCompatActivity implements RoutingListener,
         GoogleApiClient.OnConnectionFailedListener, SensorEventListener,
-        GoogleApiClient.ConnectionCallbacks, OnStreetViewPanoramaReadyCallback, TextToSpeech.OnInitListener {
+        GoogleApiClient.ConnectionCallbacks, OnStreetViewPanoramaReadyCallback,
+        TextToSpeech.OnInitListener {
+
+
+    //Declaration of Components such as EditText,Buttons.....
     private static final LatLngBounds BOUNDS_CROYDON = new LatLngBounds(new LatLng(51.388500900000004, -0.1205977),
             new LatLng(72.77492067739843, -9.998857788741589));
     public LatLng start;
@@ -119,6 +132,7 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
     private TextView mRouteMode;
     private RelativeLayout mRouteInfo;
     private CardView mCardview;
+    private RelativeLayout mStreetHide;
 
     /**
      * This activity loads a googleMap and then displays the route and pushpins on it.
@@ -129,7 +143,8 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_route_selection);
         ButterKnife.inject(this);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        // Initialising Component to the Declared Variables above
 
         Miles = (TextView) findViewById(R.id.distance);
         StepCount = (TextView) findViewById(R.id.StepsCount);
@@ -147,6 +162,7 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
         speedDisplay = (RelativeLayout) findViewById(R.id.speedMeter);
         mRouteInfo = (RelativeLayout) findViewById(R.id.RouteInformation);
         mRouteMode = (TextView) findViewById(R.id.routeMode);
+        mStreetHide = (RelativeLayout)findViewById(R.id.map_Route1);
 
         //Route Details TextView Setup
         RouteOneTime = (TextView) findViewById(R.id.timeRoueOne);
@@ -175,17 +191,19 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
         final Location location = locationManager.getLastKnownLocation(provider);
 
         if (location == null) {
-
+            // setting up speedDisplay visibility to Gone
             speedDisplay.setVisibility(View.GONE);
 
 
         } else {
+            // setting up speedDisplay visibility to visible
             speedDisplay.setVisibility(View.VISIBLE);
         }
 
 
         mCardview.setVisibility(View.GONE);
 
+        // when user click on step hide TextView it will visible the following textView
         stepshide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,7 +216,7 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
                 starting.setHint("Route Starting Point");
             }
         });
-
+        // when user click on route hide TextView it will hide the following textView
         routehide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -212,7 +230,7 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
 
             }
         });
-
+        // when user click mRouteInfo TextView it will visible the following textView
         mRouteInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -259,6 +277,9 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
                 .findFragmentById(R.id.map_Route);
         streetViewPanoramaFragment.getStreetViewPanoramaAsync(this);
         streetViewPanoramaFragment.getStreetViewPanorama().setPosition(new LatLng(51.388500900000004, -0.1205977));
+
+
+
 
 
         polylines = new ArrayList<>();
@@ -382,7 +403,6 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
                         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                         streetViewPanoramaFragment.getStreetViewPanorama().setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
 
-
                         //setting up text view format
                         DecimalFormat df = new DecimalFormat("#.##");
                         // calling street view on background
@@ -447,6 +467,11 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
                             starting.setHint("Current Location");
                             Toast.makeText(RouteSelection.this, "Starting Point Set To Current Location", Toast.LENGTH_SHORT).show();
 
+
+
+
+
+
                         }
                     }
                 }
@@ -463,8 +488,6 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
         * */
         starting.setAdapter(mAdapter);
         destination.setAdapter(mAdapter);
-
-
 
 
         starting.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -499,7 +522,47 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
                         start = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
                         streetViewPanoramaFragment.getStreetViewPanorama().setPosition(start);
 
+
+                        streetViewPanoramaFragment.getStreetViewPanorama().setOnStreetViewPanoramaChangeListener
+                                (new StreetViewPanorama.OnStreetViewPanoramaChangeListener() {
+                            @Override
+                            public void onStreetViewPanoramaChange(StreetViewPanoramaLocation streetViewPanoramaLocation) {
+                                if(null == streetViewPanoramaLocation){
+                                    //ViewGroup.LayoutParams params = finalMapFragment2.getView().getLayoutParams();
+                                    //params.height = 1900;
+                                    //finalMapFragment2.getView().setLayoutParams(params);
+
+                                   // streetViewPanoramaFragment.getView().setVisibility(View.GONE);
+
+
+                                    speech = new TextToSpeech(RouteSelection.this, new TextToSpeech.OnInitListener() {
+                                        @Override
+                                        public void onInit(int status) {
+                                            if (status != TextToSpeech.ERROR) {
+                                                speech.setLanguage(Locale.UK);
+                                                String toSpeak = ("Street View is not Available");
+                                                speech.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                                                Toast.makeText(RouteSelection.this, toSpeak,
+                                                        Toast.LENGTH_SHORT).show();
+                                                routehide.setVisibility(View.VISIBLE);
+                                            }
+                                        }
+                                    });
+
+
+                                }else{
+
+                                    streetViewPanoramaFragment.getView().setVisibility(View.VISIBLE);
+
+                                }
+
+                            }
+                        });
+
+
+
                     }
+
                 });
 
             }
@@ -893,7 +956,16 @@ public class RouteSelection extends AppCompatActivity implements RoutingListener
         // 281 Thornton Road, Croydon,CR0 3EW
         // LatLng(51.388500900000004, -0.1205977)
 
+        if (streetViewPanorama.getLocation() == null)  {
+
+
+
+
+        }
     }
+
+
+
 
 
     // Setting up step counter and setup detector sensor for distance and calories burn calculation
