@@ -21,7 +21,6 @@
             android:name="com.google.android.gms.maps.StreetViewPanoramaFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/rg_views"
             android:layout_gravity="center_horizontal|bottom" />
     </RelativeLayout>
     <android.support.v7.widget.CardView

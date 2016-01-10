@@ -19,7 +19,6 @@
         android:id="@+id/map_Route"
         android:name="com.google.android.gms.maps.StreetViewPanoramaFragment"
         android:layout_width="match_parent"
-        android:layout_above="@+id/rg_views"
         android:layout_height="395dp"
         android:layout_marginTop="210dp"
         android:background="@android:color/transparent"
