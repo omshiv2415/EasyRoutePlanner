@@ -3,8 +3,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="app_name">Easy Route Planner</string>
-    <string name="ApplicationID">pcOTExVraplH4dtiPpJ091u6seGWArek8eYkKK9f</string>
-    <string name="Client_ID">BYMw1wv3yElhLBnYwUp8MxUSPZXRvNdprCLRv3Gy</string>
+    <string name="ApplicationID">ggkp3nld72dk79fb2kwisixdf1kbwejbx47uhlc7</string>
+    <string name="Client_ID">kuvb3ucoa69sy1gms162mi7e3wdxbddqdxfk7hx4</string>
     <string name="str_rb_normal">BuildingView</string>
     <string name="str_rb_satellite">Satellite</string>
     <string name="str_rb_terrain">Terrain</string>

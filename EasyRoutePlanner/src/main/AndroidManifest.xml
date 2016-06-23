@@ -31,18 +31,14 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCBz720PEdz-vYekI0O1Iyp-6Ie58nk_L4" />
+            android:value="AIzaSyCciZ26dR5U1mgyWN7-hXJWRP46pHvOWpQ" />
 
         <activity
             android:name=".Login"
             android:label="Easy Route Planner"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Register"
@@ -53,8 +49,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.location.PROVIDERS_CHANGED" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".resetPassword"
